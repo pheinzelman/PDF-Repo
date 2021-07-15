@@ -1,4 +1,4 @@
-package com.heinzelman.PDFRepo;
+package com.heinzelman.pdf_repo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

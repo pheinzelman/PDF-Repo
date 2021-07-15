@@ -9,14 +9,18 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.heinzelman</groupId>
-	<artifactId>PDFRepo</artifactId>
+	<artifactId>pdf_repo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PDFRepo</name>
+	<name>pdf_repo</name>
 	<description>PDF Repository and Editor</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
