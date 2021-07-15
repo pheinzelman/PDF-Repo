@@ -30,9 +30,9 @@ public class FileController {
 
         String code = form.getCode();
         if ( form.getPdfA()!= null && !form.getPdfA().isEmpty()) { saveFile (  code , form.getPdfA(), "A" , model); }
-        if ( !form.getPdfAL().isEmpty() ) { saveFile (  code , form.getPdfAL(), "AL" , model ); }
-        if ( !form.getPdfB().isEmpty() ) { saveFile (  code , form.getPdfB(), "B" , model ); }
-        if ( !form.getPdfBL().isEmpty() ) { saveFile (  code , form.getPdfBL(), "BL" , model ); }
+        if ( form.getPdfAL()!= null && !form.getPdfAL().isEmpty()) { saveFile (  code , form.getPdfAL(), "AL" , model ); }
+        if ( form.getPdfB()!= null && !form.getPdfB().isEmpty()) { saveFile (  code , form.getPdfB(), "B" , model ); }
+        if ( form.getPdfBL()!= null && !form.getPdfBL().isEmpty()) { saveFile (  code , form.getPdfBL(), "BL" , model ); }
 
         return "add";
     }
@@ -48,5 +48,6 @@ public class FileController {
         } catch (Exception ex) {
             model.addAttribute("error", model.getAttribute("error") + "\n" + ex);
         }
+        model.addAttribute("result", model.getAttribute("\nloaded file " + code + "_" + suffix ) );
     }
 }
