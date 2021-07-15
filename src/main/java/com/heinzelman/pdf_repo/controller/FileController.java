@@ -1,6 +1,7 @@
 package com.heinzelman.pdf_repo.controller;
 
 import com.heinzelman.pdf_repo.forms.FilesForm;
+import com.heinzelman.pdf_repo.service.JoinPDFs;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,11 @@ public class FileController {
         if ( form.getPdfB()!= null && !form.getPdfB().isEmpty()) { saveFile (  code , form.getPdfB(), "B" , model ); }
         if ( form.getPdfBL()!= null && !form.getPdfBL().isEmpty()) { saveFile (  code , form.getPdfBL(), "BL" , model ); }
 
+
+        JoinPDFs j = new JoinPDFs();
+        j.join( homepath + code + "/" + code + "_" + "AL" + ".pdf"  , homepath + code + "/" + code + "_" + "A" + ".pdf"  );
+        
+        
         return "add";
     }
 
