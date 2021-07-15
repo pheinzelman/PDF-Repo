@@ -17,7 +17,7 @@ import java.io.*;
 @Controller
 public class FileController {
 
-    private String homepath = "c:/Users/admin/Desktop/SYSTEM/";
+    private String homepath = "c:/temp/"; //  "c:/Users/admin/Desktop/SYSTEM/";
 
 
     @RequestMapping(value = {"/add","/",""} , method = RequestMethod.GET )
