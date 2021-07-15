@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class FileController {
 
     @RequestMapping(value = {"/add"} , method = RequestMethod.GET )
-    @ResponseBody
     public String addFile ( Model model ){
-        return "abc";
+        return "add";
     }
 
 }
