@@ -1,16 +1,18 @@
 package com.heinzelman.pdf_repo.service;
 
+import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.*;
+
 import java.io.FileOutputStream;
 
 public class Stamper {
 
-    public void stamp( String path ) {
-        /*
-        try {
+    public void stamp( String path, String text , String password ) {
 
-            String FilenameIn = args[0];
-            String FilenameOut = FilenameIn.replace(".pdf", "_NEW.pdf");
-            String Write = args[1];
+        try {
+            String FilenameIn = path;
+            String FilenameOut = FilenameIn.replace(".pdf", "_Stamp.pdf");
+
 
 
             //Create PdfReader instance.
@@ -19,8 +21,8 @@ public class Stamper {
             //Create PdfStamper instance.
             PdfStamper pdfStamper = new PdfStamper(pdfReader,  new FileOutputStream( FilenameOut )) ; // "C:\\Users\\pheinzelman\\Desktop\\ModifiedTestFile.pdf"));
 
-            byte[] userPass =  null; //args[2].getBytes();
-            byte[] ownerPass = args[2].getBytes();
+            byte[] userPass =  null;
+            byte[] ownerPass = password.getBytes();
 
             pdfStamper.setEncryption( userPass, ownerPass, 4, PdfEncryption.STANDARD_ENCRYPTION_128);
             // 0 - zablokowany druk
@@ -50,11 +52,11 @@ public class Stamper {
 
                 Rectangle pageSize = ( pdfReader.getPageSize(i) );
 
-                pageContentByte.setTextMatrix( 1,2, 3,4,5, 5 ); // pageSize.getWidth()-10
+                pageContentByte.setTextMatrix( 20 , 0 , 0 , 20 , 0 , 0 ); // pageSize.getWidth()-10
 
 
                 //Write text
-                pageContentByte.showText( Write ) ; //"napis!");
+                pageContentByte.showText( text ) ;
                 pageContentByte.endText();
 
                 //pageContentByte.
@@ -70,6 +72,5 @@ public class Stamper {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        */
     }
 }

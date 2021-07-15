@@ -18,17 +18,19 @@ public class JoinPDFs {
             PDFMergerUtility PDFmerger = new PDFMergerUtility();
 
             //Setting the destination file
-            PDFmerger.setDestinationFileName( one.replace(".pdf",".JOIN_pdf"));
+            PDFmerger.setDestinationFileName( one.replace(".pdf","_JOIN.pdf"));
 
             //adding the source files
             PDFmerger.addSource(file1);
             PDFmerger.addSource(file2);
 
             //Merging the two documents
-            PDFmerger.mergeDocuments( MemoryUsageSetting.setupMainMemoryOnly() ); //   mergeDocuments();
+            PDFmerger.mergeDocuments(  MemoryUsageSetting.setupMainMemoryOnly() ); //   mergeDocuments();
             System.out.println("Documents merged");
 
-            return " :- ) ";
+
+
+            return PDFmerger.getDestinationFileName();
         }
 
 }

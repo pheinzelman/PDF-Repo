@@ -2,6 +2,7 @@ package com.heinzelman.pdf_repo.controller;
 
 import com.heinzelman.pdf_repo.forms.FilesForm;
 import com.heinzelman.pdf_repo.service.JoinPDFs;
+import com.heinzelman.pdf_repo.service.Stamper;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Controller;
@@ -37,9 +38,14 @@ public class FileController {
 
 
         JoinPDFs j = new JoinPDFs();
-        j.join( homepath + code + "/" + code + "_" + "AL" + ".pdf"  , homepath + code + "/" + code + "_" + "A" + ".pdf"  );
-        
-        
+        String joinName = j.join( homepath + code + "/" + code + "_" + "AL" + ".pdf"  , homepath + code + "/" + code + "_" + "A" + ".pdf"  );
+
+        System.out.println(  joinName );
+
+        Stamper s = new Stamper();
+           s.stamp(  joinName ,  " * napis * " , " strasznieTrudneHasl0" );
+
+
         return "add";
     }
 
