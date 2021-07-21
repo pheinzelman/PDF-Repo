@@ -18,7 +18,7 @@ public class JoinPDFs {
             PDFMergerUtility PDFmerger = new PDFMergerUtility();
 
             //Setting the destination file
-            PDFmerger.setDestinationFileName( one.replace(".pdf","_JOIN.pdf"));
+            PDFmerger.setDestinationFileName( "c:\\temp\\out.pdf");
 
             //adding the source files
             PDFmerger.addSource(file1);

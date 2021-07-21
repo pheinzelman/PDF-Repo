@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 
 @Getter
 @Setter
@@ -16,5 +15,6 @@ public class FilesForm {
     private MultipartFile pdfAL;
     private MultipartFile pdfB;
     private MultipartFile pdfBL;
+
 
 }

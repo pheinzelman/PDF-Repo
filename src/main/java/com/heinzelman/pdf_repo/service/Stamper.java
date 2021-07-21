@@ -3,6 +3,7 @@ package com.heinzelman.pdf_repo.service;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.*;
 
+import java.io.File;
 import java.io.FileOutputStream;
 
 public class Stamper {
@@ -11,7 +12,7 @@ public class Stamper {
 
         try {
             String FilenameIn = path;
-            String FilenameOut = FilenameIn.replace(".pdf", "_Stamp.pdf");
+            String FilenameOut = "c:\\temp\\out_stamp.pdf";
 
 
 
@@ -52,8 +53,10 @@ public class Stamper {
 
                 Rectangle pageSize = ( pdfReader.getPageSize(i) );
 
-                pageContentByte.setTextMatrix( 20 , 0 , 0 , 20 , 0 , 0 ); // pageSize.getWidth()-10
-
+                pageContentByte.setTextMatrix( 2 , 1 , -1 , 2 , 15 , 15 ); // pageSize.getWidth()-10
+                // b+c rotate
+                // a+d skala
+                // x+y poczatek
 
                 //Write text
                 pageContentByte.showText( text ) ;
